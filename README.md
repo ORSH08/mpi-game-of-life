@@ -16,7 +16,7 @@
 
 ## About The Project
 
-A distributed implementation of an automated cellular automaton (Game of Life) using Message Passing Interface (MPI) in C[cite: 1, 5]. 
+A distributed implementation of an automated cellular automaton (Game of Life) using Message Passing Interface (MPI) in C. 
 This project simulates a simplified version of Conway's Game of Life on a **2D Cartesian Torus grid**. The global matrix is divided into local blocks distributed across multiple processes for efficient parallel computation.
 
 ### Key Features
@@ -25,24 +25,24 @@ This project simulates a simplified version of Conway's Game of Life on a **2D C
 * **Distributed Architecture:** 
   * Process `0` reads the initial state from `matrix.txt` and distributes $B \times B$ blocks.
   * Worker processes compute next generation rules and exchange boundaries concurrently.
-  * Process `0` gathers updated blocks to reconstruct the final global matrix[cite: 1].
-* **Automated Testing:** Shell script integration for comprehensive validation against expected outcomes[cite: 1, 6].
+  * Process `0` gathers updated blocks to reconstruct the final global matrix.
+* **Automated Testing:** Shell script integration for comprehensive validation against expected outcomes.
 
 ## Repository Structure
 
 | File/Folder | Description |
 | :--- | :--- |
-| `game_of_life_solution.c` | The core MPI source code implementation[cite: 5] |
-| `matrix.txt` | Input configuration: dimensions, iterations, and initial layout[cite: 5] |
-| `gol_simulator.html` | Visual web simulator to test edge cases[cite: 1] |
-| `run_tests.sh` | Bash script for automated compilation and testing[cite: 5] |
-| `tests/` | Test configurations (blinker, glider, torus, etc.) and expected outputs[cite: 5] |
+| `game_of_life_solution.c` | The core MPI source code implementation |
+| `matrix.txt` | Input configuration: dimensions, iterations, and initial layout |
+| `gol_simulator.html` | Visual web simulator to test edge cases |
+| `run_tests.sh` | Bash script for automated compilation and testing |
+| `tests/` | Test configurations (blinker, glider, torus, etc.) and expected outputs |
 
 ## Getting Started
 
 ### Prerequisites
-The project is designed for an **Ubuntu Linux** environment using **OpenMPI**[cite: 1, 5].
-*Note: If you have MPICH installed, please replace it with OpenMPI to support the `--oversubscribe` flag[cite: 5].*
+The project is designed for an **Ubuntu Linux** environment using **OpenMPI**.
+*Note: If you have MPICH installed, please replace it with OpenMPI to support the `--oversubscribe` flag.*
 
 <details>
 <summary><b>Show OpenMPI Installation Commands</b></summary>
